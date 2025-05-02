@@ -64,16 +64,17 @@
   }
   
   .search {
+    margin-right: 450px;
     padding: 8px;
     width: 40%;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
   }
   
   .user-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 50px;
   }
   
   .avatar {
@@ -85,15 +86,19 @@
 
   .action-buttons {
     margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
   }
   
   .action-buttons button {
-    margin-right: 10px;
+    margin-right: 30px;
     padding: 10px 20px;
+    width: 150px;
     border: none;
     background-color: #2196F3;
     color: white;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
