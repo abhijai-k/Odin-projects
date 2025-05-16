@@ -1,28 +1,32 @@
 import loadHome from './home';
-import loadMenu from './menu';
-import loadContact from './contact';
-import './style.css';
 
+console.log('JavaScript is running!');
 
-function clearContent() {
-  const content = document.getElementById("content");
+// Initially load home page content
+loadHome();
+
+// Setup tab switching logic
+const content = document.getElementById('content');
+
+const homeBtn = document.getElementById('home-btn');
+const menuBtn = document.getElementById('menu-btn');
+const contactBtn = document.getElementById('contact-btn');
+
+homeBtn.addEventListener('click', () => {
   content.innerHTML = '';
-}
-
-document.getElementById("homeBtn").addEventListener("click", () => {
-  clearContent();
   loadHome();
 });
 
-document.getElementById("menuBtn").addEventListener("click", () => {
-  clearContent();
-  loadMenu();
+menuBtn.addEventListener('click', () => {
+  content.innerHTML = '';
+  import('./menu').then(module => {
+    module.default();
+  });
 });
 
-document.getElementById("contactBtn").addEventListener("click", () => {
-  clearContent();
-  loadContact();
+contactBtn.addEventListener('click', () => {
+  content.innerHTML = '';
+  import('./contact').then(module => {
+    module.default();
+  });
 });
-
-
-loadHome();
