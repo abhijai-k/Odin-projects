@@ -1,17 +1,19 @@
 export default function loadHome() {
   const content = document.getElementById('content');
+  const homeDiv = document.createElement('div');
 
   const headline = document.createElement('h1');
   headline.textContent = 'Welcome to Our Restaurant!';
 
-  const image = document.createElement('img');
-  image.src = 'https://via.placeholder.com/600x300.png?text=Delicious+Food';
-  image.alt = 'Delicious Food';
-
   const description = document.createElement('p');
-  description.textContent = 'Experience the best food in town with fresh ingredients and a cozy atmosphere.';
+  description.textContent = 'The best food in town with a cozy atmosphere.';
 
-  content.appendChild(headline);
-  content.appendChild(image);
-  content.appendChild(description);
+  const image = document.createElement('img');
+  image.src = 'https://via.placeholder.com/300x200'; // Replace with real image later
+  image.alt = 'Restaurant view';
+
+  homeDiv.appendChild(headline);
+  homeDiv.appendChild(description);
+  homeDiv.appendChild(image);
+  content.appendChild(homeDiv);
 }
