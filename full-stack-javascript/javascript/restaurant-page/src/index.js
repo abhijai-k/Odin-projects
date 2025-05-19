@@ -1,30 +1,29 @@
+import './style.css';
 import loadHome from './home';
+import loadMenu from './menu';
+import loadContact from './contact';
 
 function clearContent() {
-  const content = document.getElementById('content');
-  content.innerHTML = '';
+  document.getElementById('content').innerHTML = '';
 }
 
-function initializeWebsite() {
-  document.getElementById('home-tab').addEventListener('click', () => {
+function initializeSite() {
+  document.getElementById('home-btn').addEventListener('click', () => {
     clearContent();
     loadHome();
   });
 
-  document.getElementById('menu-tab').addEventListener('click', () => {
+  document.getElementById('menu-btn').addEventListener('click', () => {
     clearContent();
     loadMenu();
   });
 
-  document.getElementById('contact-tab').addEventListener('click', () => {
+  document.getElementById('contact-btn').addEventListener('click', () => {
     clearContent();
     loadContact();
   });
 
-  loadHome();
+  loadHome(); // Load homepage on first visit
 }
 
-import loadMenu from './menu';
-import loadContact from './contact';
-
-initializeWebsite();
+document.addEventListener('DOMContentLoaded', initializeSite);
